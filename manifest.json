@@ -1,0 +1,31 @@
+{
+    "version": "1.0.0",
+    "name": "Google Tasks",
+    "description": "Google Tasks on a New Tab",
+    "manifest_version": 3,
+    "permissions": [],
+    "host_permissions": [
+        "https://tasks.google.com/*/"
+    ],
+    "background": {
+        "service_worker": "popup.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://tasks.google.com/embed/list/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "128": "googletasks128.png"
+        }
+    },
+    "icons": {
+        "128": "googletasks128.png"
+    }
+}
